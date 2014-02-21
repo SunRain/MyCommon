@@ -1,17 +1,17 @@
 MyCommon
 ========
-android library+gradle+»ìÏı
+android library+gradle+æ··æ·†
 
-libraryÖĞprojectËµÃ÷:
-MyCommonDemoÎªdemoÑİÊ¾´úÂë£¬libraryÖĞÎªcommon´úÂë¡£
-WdUtil:·â×°ÁËutilÀà£¬×÷ÎªËùÓĞprojectµÄ»ù´¡library;
-WdFramework:¿ìËÙ¿ª·¢¿ò¼Ü£¬¹¹½¨ÁË³ÌĞòµÄ×î»ù±¾½á¹¹;
-WdCommonUI:·â×°ÁËÒ»Ğ©×Ô¶¨ÒåUI;
-MyAndroidCommon:¹¦ÄÜÄ£¿é£¬°üº¬ÁËÊı¾İ¿â£¨»ùÓÚormlite£©¡¢http£¨»ùÓÚandroid-async-http£©¡¢ÍøÂçÍ¼Æ¬¼ÓÔØ£¨»ùÓÚandroid-universal-image£©¡¢eventbus¡¢»º´æ£¨»ùÓÚguavaÓëDiskLruCache£©¡¢¾²Ä¬Óë·Ç¾²Ä¬°²×°Ğ¶ÔØµÈ;
-MyFrameworkExt:»ùÓÚframework.jar¶ø·Çandroid-sdk¹¹½¨£¬Ìá¹©ÁËÒ»Ğ©·ÇsdkÌá¹©¶øÏµÍ³framework±¾ÉíÖ§³ÖµÄ·½·¨;
-DownloadProvider-master:»ùÓÚandroidÔ´ÂëµÄÏÂÔØÄ£¿é;
+libraryä¸­projectè¯´æ˜:
+MyCommonDemoä¸ºdemoæ¼”ç¤ºä»£ç ï¼Œlibraryä¸­ä¸ºcommonä»£ç ã€‚
+WdUtil:å°è£…äº†utilç±»ï¼Œä½œä¸ºæ‰€æœ‰projectçš„åŸºç¡€library;
+WdFramework:å¿«é€Ÿå¼€å‘æ¡†æ¶ï¼Œæ„å»ºäº†ç¨‹åºçš„æœ€åŸºæœ¬ç»“æ„;
+WdCommonUI:å°è£…äº†ä¸€äº›è‡ªå®šä¹‰UI;
+MyAndroidCommon:åŠŸèƒ½æ¨¡å—ï¼ŒåŒ…å«äº†æ•°æ®åº“ï¼ˆåŸºäºormliteï¼‰ã€httpï¼ˆåŸºäºandroid-async-httpï¼‰ã€ç½‘ç»œå›¾ç‰‡åŠ è½½ï¼ˆåŸºäºandroid-universal-imageï¼‰ã€eventbusã€ç¼“å­˜ï¼ˆåŸºäºguavaä¸DiskLruCacheï¼‰ã€é™é»˜ä¸éé™é»˜å®‰è£…å¸è½½ç­‰;
+MyFrameworkExt:åŸºäºframework.jarè€Œéandroid-sdkæ„å»ºï¼Œæä¾›äº†ä¸€äº›ésdkæä¾›è€Œç³»ç»Ÿframeworkæœ¬èº«æ”¯æŒçš„æ–¹æ³•;
+DownloadProvider-master:åŸºäºandroidæºç çš„ä¸‹è½½æ¨¡å—;
 
-²Î¿¼:
+å‚è€ƒ:
 eventbus:
 https://github.com/greenrobot/EventBus
 
@@ -32,6 +32,5 @@ https://github.com/JakeWharton/DiskLruCache
 
 DownloadProvider
 https://github.com/yxl/DownloadProvider
-
 
 
