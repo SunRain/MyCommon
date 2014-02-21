@@ -1,7 +1,7 @@
 package wd.android.util.thread;
 
+import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
 
 public class ThreadUtil {
 	/**
@@ -17,15 +17,15 @@ public class ThreadUtil {
 		}
 	}
 
-	public ThreadPoolExecutor newFixedThreadPool(int nThreads) {
-		return (ThreadPoolExecutor) Executors.newFixedThreadPool(nThreads);
+	public static ExecutorService newFixedThreadPool(int nThreads) {
+		return Executors.newFixedThreadPool(nThreads);
 	}
 
-	public ThreadPoolExecutor newCachedThreadPool() {
-		return (ThreadPoolExecutor) Executors.newCachedThreadPool();
+	public static ExecutorService newCachedThreadPool() {
+		return Executors.newCachedThreadPool();
 	}
 
-	public ThreadPoolExecutor newSingleThreadExecutor() {
-		return (ThreadPoolExecutor) Executors.newSingleThreadExecutor();
+	public static ExecutorService newSingleThreadExecutor() {
+		return Executors.newSingleThreadExecutor();
 	}
 }

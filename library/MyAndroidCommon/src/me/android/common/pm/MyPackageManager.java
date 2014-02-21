@@ -1,9 +1,9 @@
 package me.android.common.pm;
 
 import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 import wd.android.util.applications.AppUtil;
+import wd.android.util.thread.ThreadUtil;
 import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.net.Uri;
@@ -19,7 +19,7 @@ final class MyPackageManager {
 
 	MyPackageManager(Context context) {
 		this.context = context;
-		threadPool = Executors.newCachedThreadPool();
+		threadPool = ThreadUtil.newCachedThreadPool();
 	}
 
 	void installPackage(final Uri packageURI,
