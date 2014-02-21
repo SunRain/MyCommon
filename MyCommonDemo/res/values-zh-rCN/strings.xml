@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_label">BMI 英制计算器</string>
+    <string name="us_height">身高</string>
+    <string name="feet_prompt">选择英尺</string>
+    <string name="inch_prompt">选择英寸</string>
+    <string name="pound">体重 (lbs)</string>
+    <string name="bmi_btn">计算 BMI 值</string>
+    <string name="bmi_result">你的 BMI 值是 ...</string>
+    <string name="input_error">哦哦，字段中只能输入数字喔</string>
+    <string name="advice_light">你该多吃点</string>
+    <string name="advice_average">你的体型很不错喔，继续保持吧！</string>
+    <string name="advice_heavy">你应该减肥啰！</string>
+    <string name="advice_fat">为了健康，你应该马上采取一些行动！</string>
+    <string name="about_label">关于 ...</string>
+    <string name="close">结束</string>
+    <string name="about_title">关于 aBMI 1.0</string>
+    <string name="about_msg">aBMI 是个 BMI 值计算器程序，由xx(xx@gmail.com) 编写</string>
+    <string name="homepage_label">首页</string>
+    <string name="homepage_uri">geo:39.895874,116.321238</string>
+    <string name="ok_label">OK</string>
+    <string name="report_back">前一页</string>
+    <string name="report_title">BMI 报告</string>
+
+    <string-array name="feets">
+        <item>2 英尺</item>
+        <item>3 英尺</item>
+        <item>4 英尺</item>
+        <item>5 英尺</item>
+        <item>6 英尺</item>
+        <item>7 英尺</item>
+        <item>8 英尺</item>
+    </string-array>
+    <string-array name="inches">
+        <item>0 英寸</item>
+        <item>1 英寸</item>
+        <item>2 英寸</item>
+        <item>3 英寸</item>
+        <item>4 英寸</item>
+        <item>5 英寸</item>
+        <item>6 英寸</item>
+        <item>7 英寸</item>
+        <item>8 英寸</item>
+        <item>9 英寸</item>
+        <item>10 英寸</item>
+        <item>11 英寸</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,37 @@
+#================================框架======================================
+
+#============================测试发现不需要添加libraryjars也可以正常工作============================#
+#不混淆第三方jar
+#-libraryjars ../MyAndroidCommon/libs/
+#-libraryjars ../MyAndroidCommon/bin/
+
+#-libraryjars ../WdCommon/libs/
+#-libraryjars ../WdCommon/bin/
+
+#-libraryjars ../WdCommonUI/libs/
+#-libraryjars ../WdCommonUI/bin/
+
+#-libraryjars ../WdFramework/libs/
+#-libraryjars ../WdFramework/bin/
+
+#-libraryjars ../WdUtil/libs/
+#-libraryjars ../WdUtil/bin/
+
+#-libraryjars libs/
+
+#============================测试发现不需要添加libraryjars也可以正常工作============================#
+-keep class com.j256.** { *; }
+-keep class wd.android.custom.ui.** { *; }
+-keep class wd.android.common.ui.** { *; }
+
+-keep class wd.android.common.db.** { *; }
+-keep class * extends wd.android.common.db.BaseBean { *; }
+-keep class * extends wd.android.common.db.BaseDao { *; }
+
+#======================================
+-keep class me.android.common.db.** { *; }
+-keep class * extends me.android.common.db.BaseBean { *; }
+-keep class * extends me.android.common.db.BaseDao { *; }
+#======================================
+
+#================================框架======================================

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:nbtstatx="http://schemas.nbtstatx.com/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <wd.android.common.ui.view.BorderImageView
+        android:id="@+id/imgView"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/slipdemo_item1"
+        nbtstatx:borderColor="white"
+        nbtstatx:borderWidth="30" />
+
+</LinearLayout>

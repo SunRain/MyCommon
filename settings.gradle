@@ -1,0 +1,6 @@
+include ':library:MyAndroidCommon'
+include ':MyCommonDemo'
+include ':library:WdUtil'
+include ':library:WdFramework'
+include ':library:WdCommonUI'
+include ':library:DownloadProvider-master'

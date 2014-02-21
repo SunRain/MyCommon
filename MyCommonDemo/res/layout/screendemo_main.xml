@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <Button
+        android:id="@+id/btnUnlockScreenDemo"
+        android:layout_marginTop="30dip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="UnlockScreen" />
+
+    <Button
+        android:id="@+id/btnLockScreenDemo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="LockScreen" />
+
+</LinearLayout>

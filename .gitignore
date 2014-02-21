@@ -1,0 +1,12 @@
+*~
+.*~
+Thumbs.db
+bin
+gen
+.svn
+build
+.idea
+.gradle
+
+MyTool
+PhoneGuard

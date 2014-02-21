@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <Button
+        android:id="@+id/main_btn_enable"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="enableSlider" />
+
+    <Button
+        android:id="@+id/main_btn_disable"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="disableSlider" />
+
+    <Button
+        android:id="@+id/main_btn_open"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="openSlider" />
+
+    <Button
+        android:id="@+id/main_btn_close"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:onClick="onClick"
+        android:text="closeSlider" />
+
+    <HorizontalScrollView
+        android:id="@+id/main_horizontal_scroll_view"
+        android:layout_width="fill_parent"
+        android:layout_height="240dp"
+        android:background="#ff808080"
+        android:fadingEdge="none"
+        android:paddingBottom="3.0dip"
+        android:paddingTop="3.0dip"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:padding="4dp"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:padding="4dp"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:padding="4dp"
+                android:scaleType="fitCenter" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@null"
+                android:padding="4dp"
+                android:scaleType="fitCenter" />
+        </LinearLayout>
+    </HorizontalScrollView>
+
+</LinearLayout>

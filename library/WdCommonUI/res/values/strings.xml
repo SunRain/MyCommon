@@ -1,0 +1,27 @@
+<resources>
+
+    <string name="app_name">MyCommon</string>
+    <!-- 下拉控件相关 -->
+    <string name="pulldown_head_refreshing">正在刷新...</string>
+    <string name="pulldown_loosen_refreshing">松开刷新</string>
+    <string name="pulldown_refreshing">下拉刷新</string>
+    <string name="pulldown_refreshing_lasttime">最后刷新时间：%1$s</string>
+    <string name="pulldown_load_finish">已加载完全部</string>
+    <string name="pulldown_loading">正在加载...</string>
+    <string name="pulldown_load_more">查看更多</string>
+
+    <!-- 下拉刷新 -->
+    <string name="pull_refresh_header_pull">下拉刷新</string>
+    <string name="pull_refresh_loosen">松开刷新</string>
+    <string name="pull_refresh_refreshing">正在刷新</string>
+    <string name="pull_refresh_footer_pull">查看更多</string>
+    <string name="pull_refresh_loading">正在加载...</string>
+    <string name="pull_to_refresh_tap">Tap to refresh...</string>
+
+    <!-- 瀑布流 -->
+    <string name="ptr_pull_to_refresh">下拉刷新</string>
+    <string name="ptr_release_to_refresh">松开刷新</string>
+    <string name="ptr_refreshing">正在刷新</string>
+    <string name="ptr_last_updated">上次更新于： %1$s</string>
+
+</resources>

@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ConfigProfiles ProfilesVersion="tmp">
+    <Group Name="Battery">
+        <!-- 低于或等于下限，停止友好用户所有功能高于上限，主动开启友好用户所有功能 -->
+        <Item Name="LowerLimit" Value="20" Type="digit" />
+        <Item Name="UpperLimit" Value="60" Type="digit" />
+    </Group>
+
+    <Group Name="WorkingCondition">
+        <!-- <mcc_mnc>460_01</mcc_mnc> -->
+        <Item Name="cm_mcc_mnc" Value="460_00" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="uni_mcc_mnc" Value="460_01" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="cm2_mcc_mnc" Value="460_02" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="test1_mcc_mnc" Value="460_98" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="test2_mcc_mnc" Value="460_99" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="test3_mcc_mnc" Value="460_80" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="test4_mcc_mnc" Value="489_09" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="test5_mcc_mnc" Value="460_08" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <Item Name="test6_mcc_mnc" Value="460_09" Type="string">
+            <lac Value="" Type="digit">
+                <ci></ci>
+                <ci></ci>
+            </lac>
+        </Item>
+        <!-- <Item Name="test_mcc_mnc" Value="460_07" Type="string"> -->
+        <!-- <lac Value="" Type="digit"> -->
+        <!-- <ci></ci> -->
+        <!-- <ci></ci> -->
+        <!-- </lac> -->
+        <!-- </Item> -->
+    </Group>
+
+    <Group Name="FriendlyConfig">
+        <!-- 是否开机启动友好用户 -->
+        <!-- Yes 表示开机启动 -->
+        <!-- Other 表示不需要开机启动 -->
+        <Item Name="StartupImmediately" Value="Yes" Type="string" />
+    </Group>
+
+    <Group Name="LicenseConfig">
+        <Item Name="LimitTime" Value="0" Type="digit" />
+    </Group>
+
+    <Group Name="TransferConfig">
+        <Item Name="UploadType" Value="FTP" Type="string" />
+        <!-- FTP服务器的公网IP地址 -->
+        <Item Name="IP" Value="58.251.159.113" Type="string" />
+        <!-- FTP服务器的侦听端口号 -->
+        <Item Name="Port" Value="21" Type="digit" />
+        <!-- FTP账号 -->
+        <Item Name="User" Value="ftpuser" Type="string" />
+        <!-- FTP帐号密码 -->
+        <Item Name="Password" Value="huawei123" Type="string" />
+        <!-- FTP服务器的目录 -->
+        <Item Name="ServerDir" Value="Nastar-M/MCHR_IN/" Type="string" />
+        <!-- 接入点名称 -->
+        <Item Name="ApnName" Value="cmnet" Type="string" />
+        <!-- 接入点内容 -->
+        <Item Name="ApnValue" Value="Uninet" Type="string" />
+        <!-- 文件大小限制，单位为byte ,说明文件超过此设置值时，不允许上传此文件。设置成0时，说明不受大小限制 -->
+        <Item Name="HTTP_URL" Value="" Type="string" />
+        <Item Name="HTTPS_URL" Value="" Type="string" />
+        <Item Name="FileSize" Value="1048576" Type="digit" />
+        <!-- 可以是GSM，WCDMA，或ALL(不限制) -->
+        <Item Name="Meshwork" Value="ALL" Type="string" />
+        <!-- 周期上传 (分钟) -->
+        <Item Name="Cyc" Value="60" Type="digit" />
+        <!-- 尝试次数 -->
+        <Item Name="AfreshTimes" Value="3" Type="digit" />
+    </Group>
+
+    <Group Name="WCDMAPilotPollution">
+        <Item Name="Rscp" Value="-85" Type="digit" />
+        <Item Name="RscpDValue" Value="5" Type="digit" />
+        <Item Name="NghbrCellCount" Value="4" Type="digit" />
+        <Item Name="TimerSafe" Value="15" Type="digit" />
+    </Group>
+
+    <Group Name="Mchr">
+        <Item Name="MchrOptions" Value="0000001D" Type="digit" />
+        <!-- 十六进制，EventId -->
+        <Item Name="MchrEventList"
+            Value="1001,1002,1002,1003,1004,1005,1006,1007,1008,1009,100A,100B,100C,100D,100E,100F,1010,1011,1012,1013,1014,1015,1016,1017,1018,1019,101A,101B,101C,101D,101E,1021,1022,1023,1024,1025,1026,1027,1028,1029,102A,102B,102C,102D,102E,102F,1030,1031,1032,1033,1034,1035,1036,1037,1038,1039,103A,103B,103C,103D,103E,103F,1040,1041,1042,1043,1044,1045,1046,1047,1048,1049,104A,104B,104C,104D,104E,104F,1050,1051,1052,1053,101F,1020,1054,1055,1056,1057,1060,1061,2001,2002,2003,2004,2005,2006,2007,2008,2009,200A,200B,200C,200D,200E,200F,2010,2011,2012,2013,2014,2015,2016,2017,2018,2019,201A,201B,201C,201D,201E,201F,2020,2021,2022,2023,2024,2025,2026,2027,2028,2029,202A,202B,202E,202F,2030,2031,2032,2033,2034,2035,2036,2037,2038,2039,203A,203B,203C,203D,203E,203F,2040,2041,2042,2043,2044,2045,2046,2047,2048,2049,204A,204B,204C,204D,204E,204F,2050,2051,2052,2053,2054,2055,2056,2057,2058,2059,205A,205B,205C,205F,2060,2061,2062,2063,202C,202D,2065,2066,2064,2067,2068"
+            Type="string" />
+        <!-- 单位为s -->
+        <Item Name="IdleMeasPeriod" Value="180" Type="digit" />
+        <Item Name="DecMeasPeriod" Value="5" Type="digit" />
+        <!-- CutType {Period(单位是分钟), Num(单位是记录条目)} -->
+        <Item Name="CutType" Value="Num" Type="string" />
+        <Item Name="Period" Value="60" Type="digit" />
+        <Item Name="Num" Value="500" Type="digit" />
+    </Group>
+
+    <Group Name="WeakCoverage">
+        <!-- GSM下服务小区RxLev小于-95dBm且持续时长达5s,最强邻小区RxLev小于-90dBm且持续时长达5s -->
+        <Item Name="GsmTimerKeep" Value="5" Type="digit" />
+        <!-- 一分钟保护时间 -->
+        <Item Name="GsmTimerSafe" Value="15" Type="digit" />
+        <Item Name="SrvCellRxlev" Value="-90" Type="digit" />
+        <Item Name="NeighborCellRxLev" Value="-90" Type="digit" />
+
+        <!-- 激活集中最好小区的RSCP <= -97dBm且持续5s。M集中最好小区的RSCP <= -97dBm且持续5s。 -->
+        <Item Name="WcdmaTimerKeep" Value="5" Type="digit" />
+        <!-- 一分钟保护时间 -->
+        <Item Name="WcdmaTimerSafe" Value="15" Type="digit" />
+        <Item Name="SrvActvSetRSCP" Value="-95" Type="digit" />
+        <Item Name="MonitorSetRSCP" Value="-95" Type="digit" />
+    </Group>
+
+    <Group Name="GPS">
+        <Item Name="LocationTime" Value="120" Type="digit" />
+        <Item Name="WorkingTime" Value="120" Type="digit" />
+
+        <!-- OpenCondition -->
+        <Item Name="OpenCallEvent" Value="100F,1012,200D,2010" Type="string" />
+        <!-- GpsTestEvent(FF01), BOOT_STARTUP(FF02), GSMCellReselection(1003),
+            GsmHandoverSuc(101B), WcdmaCellResel(2003), WcdmaSoftHOSuc(2017), GSMabnormalCellReselection(1004),
+            WcdmaAbnormalCellResel(2004), W2GCellReselection(205B), G2WCellReselection(205D) -->
+        <Item Name="OpenEvent" Value="FF01,FF02,1003,101B,2003,2017,1004,2004,205B,205D"
+            Type="string" />
+        <Item Name="SuccessDurationTime" Value="120" Type="digit" />
+        <Item Name="ExceptionCellChangerTime" Value="60" Type="digit" />
+
+        <!-- CloseCondition -->
+        <!-- GsmCallCompleted(1014), GsmIncomingCallSetupFail(1017), GsmOutgoingCallSetupFail(1016),
+            GsmEmergencyCallSetupFail(1018), WcdmaOutgoingCallSetupFail(2013), WcdmaIncomingCallSetupFail(2014),
+            WcdmaCallCompleted(2011), GsmCallHangup(1019), WcdmaCallAttemptHangup(2015),
+            GsmCallDropped(101D), WcdmaCallDropped(2019) -->
+        <Item Name="CloseCallEvent" Value="1014,1017,1016,1018,2013,2014,2011,1019,2015,101D,2019"
+            Type="string" />
+        <!-- 单位:秒 -->
+        <Item Name="CloseDelayTime" Value="120" Type="digit" />
+
+        <Item Name="BatteryLevelLimit" Value="20" Type="digit" />
+        <Item Name="ChangeToLast" Value="5" Type="digit" />
+        <Item Name="ChangeToInvalid" Value="300" Type="digit" />
+    </Group>
+
+    <Group Name="EventLogConfig">
+        <Item Name="EventLogEnable" Value="Yes" Type="string" />
+        <Item Name="LogLengthBeforeEvent" Value="2" Type="digit" />
+        <Item Name="LogLengthAfterEvent" Value="1" Type="digit" />
+        <Item Name="MaxLogLength" Value="8" Type="digit" />
+
+        <!-- LogCodeForEventLog -->
+        <Item Name="LogCode"
+            Value="5064,5076,5071,5079,512f,512c,5130,5131,5132,5133,5134,5135,5137,5138,5139,513A,51F5,51F6,51F9,51FC,51FE,5202,520A,5228,5230,5231,5234,5211,522A,5258,525B,4010,4015,420B,4110,4111,4116,4125,4127,412F,4138,414A,4156,4165,4170,4214,4301,4303,4309,4222,7130,7131,7135,713A,7143,7144,3010,3013,3014"
+            Type="string" />
+
+        <!-- EventToRecordLog -->
+        <!-- GsmOutgoingCallSetupFail(1016), GsmIncomingCallSetupFail(1017), GsmEmergencyCallSetupFail(1018),
+            GsmCallDropped(101D), WcdmaOutgoingCallSetupFail(2013), WcdmaIncomingCallSetupFail(2014),
+            WcdmaCallDropped(2019) -->
+        <Item Name="LogEvent" Value="1016,1017,1018,101D,2013,2014,2019" Type="string" />
+
+        <Item Name="EventLogFileMaxSize" Value="50" Type="digit" />
+        <Item Name="EventLogFileMaxAmountPerDay" Value="100" Type="digit" />
+    </Group>
+
+    <Group Name="BreakPointConfig">
+        <Item Name="TransferSize" Value="524288" Type="digit" />
+    </Group>
+
+    <Group Name="RemoteControlConfig">
+        <Item Name="RemoteControlEnable" Value="Yes" Type="string" />
+        <Item Name="RemoteControlAPK" Value="Yes" Type="string" />
+        <Item Name="RemoteControlXML" Value="Yes" Type="string" />
+        <!-- 查询周期 ，单位毫秒 -->
+        <Item Name="UpdatePeriod" Value="86400000" Type="string" />
+        <Item Name="VersionXMLAddress"
+            Value="http://58.251.159.113:8010/testweb/download?name=version.xml&amp;team=phu"
+            Type="string" />
+    </Group>
+
+</ConfigProfiles>

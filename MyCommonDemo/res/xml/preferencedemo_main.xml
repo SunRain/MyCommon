@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- *PreferenceActivity中常见的几种组件，以下为具体介绍及用法: -->    <!-- *PreferenceScreen:设置页面，可嵌套成二级设置页面，用Title参数设置标题 -->    <!-- *PreferenceCategory:某一类相关到设置，可用title参数设置标题 -->    <!--
+		*CheckBoxPreference:是一个CheckBox设置，只有两种值，true或false，可用title参数设置标题，可summaryOn和summaryOff参数来设置控件选中和未选中时的提示。
+	-->    <!--
+		*EditTextPreference:输入框控件，点击后可输入字符串设置。用title参数设置标题，Summary参数设置说明，dialogTitle参数设置输入框的标题。
+	-->    <!--
+		*RingtonePreference:铃声选择框，点击后可选择系统铃声。title参数设置标题，summary参数设置说明，dialogtitle参数设置铃声选择框的标题。
+	-->
+
+<!-- key:唯一标识。SharedPreferences也将通过此Key值进行数据保存，也可以通过key值获取保存的信息 -->
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="PreferenceCategory 1">
+        <CheckBoxPreference
+            android:key="CheckBox1"
+            android:title="CheckBox"
+            android:summaryOn="某功能：开启"
+            android:summaryOff="某功能：关闭"
+            android:defaultValue="true" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="PreferenceCategory 2">
+        <PreferenceScreen android:title="二级PreferenceScreen">
+            <CheckBoxPreference
+                android:key="CheckBox2"
+                android:title="CheckBox"
+                android:summaryOn="某功能：开启"
+                android:summaryOff="某功能：关闭"
+                android:defaultValue="true" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="PreferenceCategory 3">
+        <ListPreference
+            android:key="ListPreference"
+            android:title="ListPreference"
+            android:summary="ListPreference测试"
+            android:dialogTitle="ListPreference"
+            android:entries="@array/entries_list_preference"
+            android:entryValues="@array/entriesvalue_list_preference" />
+        <EditTextPreference
+            android:key="EditTextPreference"
+            android:title="EditTextPreference"
+            android:summary="点击输入"
+            android:dialogTitle="输入设置" />
+        <RingtonePreference
+            android:key="RingtonePreference"
+            android:title="RingtonePreference"
+            android:summary="选择铃声" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="user_message">
+        <PreferenceScreen android:title="录入用户个人资料">
+            <EditTextPreference
+                android:key="myName"
+                android:title="name"
+                android:summary="请输入您的姓名"
+                android:dialogTitle="请输入您的姓名" />
+            <EditTextPreference
+                android:key="myEmail"
+                android:title="email"
+                android:summary="请输入您的邮件地址"
+                android:dialogTitle="请输入您的邮件地址" />
+            <EditTextPreference
+                android:key="myPhone"
+                android:title="telephone"
+                android:summary="请输入您的电话号码"
+                android:dialogTitle="请输入您的电话号码" />
+        </PreferenceScreen>
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="PreferenceCategory 4">
+        <PreferenceScreen
+            android:title="showPreferenceXml"
+            android:summary="跳转到另一个ShowPreferenceXml"
+            android:key="showPreferenceXml" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

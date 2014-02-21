@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+
+    <Spinner
+        android:id="@+id/spnList_HttpPostDemo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:drawSelectorOnTop="false" />
+
+    <EditText
+        android:id="@+id/editUri_HttpPostDemo"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="3"
+        android:saveEnabled="true" />
+
+    <EditText
+        android:id="@+id/editStr_HttpPostDemo"
+        android:textSize="14sp"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:maxLines="8"
+        android:lines="8"
+        android:saveEnabled="true" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnResetUri_HttpPostDemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ResetUri"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnReset_HttpPostDemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ResetContent"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/btnSend_HttpPostDemo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Send"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtValue_HttpPostDemo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+</LinearLayout>
