@@ -30,15 +30,17 @@ final class MyPackageManager {
 				int returnCode = PackageUtil.install(context,
 						packageURI.getPath());
 
-				// 获取安装包信息
-				String archiveFilePath = packageURI.getPath();
-				PackageInfo packageInfo = AppUtil.getUninatllAppInfo(
-						context.getPackageManager(), archiveFilePath);
-				String packageName = "";
-				if (packageInfo != null) {
-					packageName = packageInfo.packageName;
+				if (null != observer) {
+					// 获取安装包信息
+					String archiveFilePath = packageURI.getPath();
+					PackageInfo packageInfo = AppUtil.getUninatllAppInfo(
+							context.getPackageManager(), archiveFilePath);
+					String packageName = "";
+					if (packageInfo != null) {
+						packageName = packageInfo.packageName;
+					}
+					observer.packageInstalled(packageName, returnCode);
 				}
-				observer.packageInstalled(packageName, returnCode);
 			}
 		});
 	}
@@ -49,7 +51,9 @@ final class MyPackageManager {
 			@Override
 			public void run() {
 				int returnCode = PackageUtil.uninstall(context, packageName);
-				observer.packageDeleted(packageName, returnCode);
+				if (null != observer) {
+					observer.packageDeleted(packageName, returnCode);
+				}
 			}
 		});
 	}
