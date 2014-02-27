@@ -74,7 +74,7 @@ public class DownloadManagerPro {
 		// 对于下载，考虑到流量费用，这里是否允许使用漫游。
 		request.setAllowedOverRoaming(false);
 
-		request.setShowRunningNotification(false);
+		request.setShowRunningNotification(true); // 是否显示下载进度的提示
 		// request.setTitle("Downloading"); //设置notification的标题
 		// 设置一个描述信息，主要是最终显示的notification提示，可以随便写个自己区别
 		// request.setDescription("Downloading");
@@ -98,7 +98,6 @@ public class DownloadManagerPro {
 
 		// 设置mime类型，这里看服务器配置，一般国家化的都为utf-8编码。
 		// request.setMimeType(String mimeType)
-		request.setShowRunningNotification(true); // 是否显示下载进度的提示
 
 		// request.setVisibleInDownloadsUi(true); //设置下载管理类在处理过程中的界面是否显示
 		return request;
