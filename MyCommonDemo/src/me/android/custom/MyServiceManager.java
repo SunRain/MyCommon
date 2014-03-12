@@ -1,9 +1,9 @@
 package me.android.custom;
 
 import me.android.common.db.MyDaoManager;
-import me.android.common.download.MyDownloadManager;
 import me.android.custom.global.DirData;
 import wd.android.framework.manager.CommonBaseManager;
+import wd.android.framework.manager.ServiceHolder;
 import wd.android.util.sdk.ExternalStorageReceiver;
 import wd.android.util.sdk.ExternalStorageReceiver.ExternalStorageListener;
 import android.content.Context;
@@ -18,12 +18,12 @@ public class MyServiceManager extends CommonBaseManager {
 
 		@Override
 		public void onMediaMounted() {
-			getService(DirData.class).initWorkDir(mContext);
+			ServiceHolder.getService(DirData.class).initWorkDir(mContext);
 		}
 
 		@Override
 		public void onMediaRemoved() {
-			getService(DirData.class).initWorkDir(mContext);
+			ServiceHolder.getService(DirData.class).initWorkDir(mContext);
 		}
 	};
 
@@ -42,8 +42,8 @@ public class MyServiceManager extends CommonBaseManager {
 
 	@Override
 	protected void onDestroy() {
-		getService(ExternalStorageReceiver.class).release();
-		getService(MyDaoManager.class).deInit();
+		ServiceHolder.getService(ExternalStorageReceiver.class).release();
+		ServiceHolder.getService(MyDaoManager.class).deInit();
 		super.onDestroy();
 	}
 }

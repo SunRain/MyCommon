@@ -14,7 +14,7 @@ public class CommonBaseManager extends BaseManager {
 
 	@Override
 	protected void onDestroy() {
-		getService(GlobalData.class).release();
-		getService(MyPreference.class).commitTransaction();
+		ServiceHolder.getService(GlobalData.class).release();
+		ServiceHolder.getService(MyPreference.class).commitTransaction();
 	}
 }

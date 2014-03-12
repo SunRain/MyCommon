@@ -1,7 +1,5 @@
 package wd.android.framework.manager;
 
-import java.util.HashMap;
-
 import wd.android.util.util.MyLog;
 import android.content.Context;
 
@@ -10,7 +8,6 @@ import android.content.Context;
  */
 public abstract class BaseManager implements IManager {
 	private volatile boolean isStart = false;
-	private static HashMap<String, Object> mServices = new HashMap<String, Object>();
 
 	@Override
 	public final synchronized void create(Context context) {
@@ -19,7 +16,7 @@ public abstract class BaseManager implements IManager {
 			return;
 		}
 		isStart = true;
-		mServices.clear();
+		ServiceHolder.clear();
 		onCreate(context);
 	}
 
@@ -31,7 +28,7 @@ public abstract class BaseManager implements IManager {
 		}
 		isStart = false;
 		onDestroy();
-		mServices.clear();
+		ServiceHolder.clear();
 	}
 
 	/**
@@ -51,22 +48,11 @@ public abstract class BaseManager implements IManager {
 	 * 
 	 * @param manager
 	 */
-	protected static void addService(Object manager) {
-		mServices.put(manager.getClass().getSimpleName(), manager);
+	protected final void addService(Object manager) {
+		ServiceHolder.addService(manager);
 	}
 
 	// public Object getService(Class<?> clazz) {
 	// return mServices.get(clazz.getSimpleName());
 	// }
-
-	/**
-	 * 获取单例服务对象
-	 * 
-	 * @param clazz
-	 * @return
-	 */
-	@SuppressWarnings("unchecked")
-	public static <T> T getService(Class<T> clazz) {
-		return (T) mServices.get(clazz.getSimpleName());
-	}
 }
