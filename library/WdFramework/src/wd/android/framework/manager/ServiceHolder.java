@@ -5,6 +5,9 @@ import java.util.HashMap;
 public final class ServiceHolder {
 	private static final HashMap<String, Object> mServices = new HashMap<String, Object>();
 
+	private ServiceHolder() {
+	}
+
 	/**
 	 * 初始化管理模块
 	 * 
