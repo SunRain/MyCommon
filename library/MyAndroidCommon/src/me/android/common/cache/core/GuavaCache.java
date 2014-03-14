@@ -1,11 +1,5 @@
 package me.android.common.cache.core;
 
-import com.google.common.cache.CacheBuilder;
-import com.google.common.cache.CacheLoader;
-import com.google.common.cache.LoadingCache;
-import com.google.common.cache.RemovalListener;
-import com.google.common.cache.RemovalNotification;
-
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.concurrent.ExecutionException;
@@ -13,6 +7,12 @@ import java.util.concurrent.TimeUnit;
 
 import wd.android.util.util.ByteUtil;
 import wd.android.util.util.MyLog;
+
+import com.google.common.cache.CacheBuilder;
+import com.google.common.cache.CacheLoader;
+import com.google.common.cache.LoadingCache;
+import com.google.common.cache.RemovalListener;
+import com.google.common.cache.RemovalNotification;
 
 public class GuavaCache<V> {
 	// 基本上可以通过两种方式来创建cache：
@@ -48,6 +48,10 @@ public class GuavaCache<V> {
 		cache = createCache(new CacheLoader<String, V>() {
 			public V load(String key) throws Exception {
 				MyLog.i("key = " + key);
+				if (null == localCache) {
+					throw new Exception("key = " + key + ",value = null");
+				}
+
 				// 从本地获取，DiskLruCache
 				// key = toKey(key);
 				V value = localCache.get(key);
@@ -66,6 +70,10 @@ public class GuavaCache<V> {
 			@Override
 			public void onRemoval(RemovalNotification<String, V> rn) {
 				MyLog.i("rn.getKey() = " + rn.getKey());
+				if (null == localCache) {
+					return;
+				}
+
 				// 移除时删除本地内容
 				if (localCache.isExpire(rn.getKey())) {
 					localCache.delete(rn.getKey());
@@ -102,6 +110,9 @@ public class GuavaCache<V> {
 		cache.put(key, value);
 		MyLog.i("key = " + key + ",value = " + value);
 		// 写入本地
+		if (null == localCache) {
+			return;
+		}
 		localCache.put(key, value);
 	}
 

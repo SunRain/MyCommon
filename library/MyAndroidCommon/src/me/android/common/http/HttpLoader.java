@@ -24,17 +24,18 @@ import android.util.Base64;
 public class HttpLoader {
 	// 后续会替换掉
 	// public static GuavaCache<HttpCacheEntry> guavaCache;
-	public static LocalCache<HttpCacheEntry> localCache;
+	public static LocalCache localCache;
 
 	public static void init(Context context) {
 		File cacheDir = EnvironmentInfo.getDiskCacheDir(context, "http");
 		long byteSize = 10 * 1024 * 1024L;
+		HttpCacheLoder cacheLoder = null;
 		try {
-			HttpCacheLoder cacheLoder = new HttpCacheLoder(cacheDir, byteSize);
-			localCache = new LocalCache<HttpCacheEntry>(cacheLoder);
+			cacheLoder = new HttpCacheLoder(cacheDir, byteSize);
 		} catch (IOException e) {
 			MyLog.e(e);
 		}
+		localCache = new LocalCache(cacheLoder);
 	}
 
 	public static void load(String url, CacheHttpListener httpHandler) {
@@ -89,15 +90,10 @@ public class HttpLoader {
 	}
 
 	public static void saveCache(String key, HttpCacheEntry value) {
-		if (localCache != null) {
-			localCache.put(key, value);
-		}
+		localCache.put(key, value);
 	}
 
 	public static HttpCacheEntry getCache(String key) {
-		if (null != localCache) {
-			return localCache.get(key);
-		}
-		return null;
+		return localCache.get(key);
 	}
 }

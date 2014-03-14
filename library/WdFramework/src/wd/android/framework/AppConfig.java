@@ -12,7 +12,7 @@ public abstract class AppConfig {
 	 * @param crashReportFlag
 	 *            false表示不记录
 	 */
-	public static void setCrashReportFlag(boolean crashReportFlag) {
+	private static void setCrashReportFlag(boolean crashReportFlag) {
 		if (!crashReportFlag) {
 			return;
 		}
@@ -30,7 +30,7 @@ public abstract class AppConfig {
 	void init() {
 		setLog();
 		setCrashReportFlag();
-		initTables();
+		initDatabase();
 	}
 
 	private void setLog() {
@@ -45,7 +45,7 @@ public abstract class AppConfig {
 	/**
 	 * 初始化数据库表
 	 */
-	protected abstract void initTables();
+	protected abstract void initDatabase();
 
 	/**
 	 * 设置是否需要记录CrashReport

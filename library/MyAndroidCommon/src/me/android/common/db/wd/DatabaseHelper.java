@@ -1,5 +1,11 @@
 package me.android.common.db.wd;
 
+import java.util.Map;
+import java.util.Set;
+
+import me.android.common.db.BaseBean;
+import wd.android.util.util.MyLog;
+import wd.android.util.util.ObjectUtil;
 import android.annotation.TargetApi;
 import android.content.ContentValues;
 import android.content.Context;
@@ -12,14 +18,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import com.j256.ormlite.android.apptools.OrmLiteSqliteOpenHelper;
 import com.j256.ormlite.support.ConnectionSource;
 import com.j256.ormlite.table.TableUtils;
-
-import java.util.Map;
-import java.util.Set;
-
-import me.android.common.db.BaseBean;
-import me.android.common.db.DatabaseConfig;
-import wd.android.util.util.MyLog;
-import wd.android.util.util.ObjectUtil;
 
 /**
  * 数据库包装类
