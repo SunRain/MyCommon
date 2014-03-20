@@ -9,7 +9,7 @@ import android.app.ActivityManager;
 import android.app.Application;
 import android.content.pm.PackageInfo;
 
-public abstract class BaseApp extends Application {
+public abstract class BaseApp extends Application implements IApp {
 	private static BaseApp sApp = null;
 	private volatile boolean isInit = false;
 	private BaseManager mServiceManager;
@@ -47,6 +47,7 @@ public abstract class BaseApp extends Application {
 	/**
 	 * 在假设Application不释放的情况下，进入app业务态，初始化资源
 	 */
+	@Override
 	public synchronized void initApp() {
 		MyLog.i("isInit = " + isInit);
 		isInit = true;
@@ -62,6 +63,7 @@ public abstract class BaseApp extends Application {
 	/**
 	 * 退出app业务态，释放资源（注：结束进程只做辅助用）
 	 */
+	@Override
 	public synchronized void exitApp() {
 		MyLog.i("isInit = " + isInit);
 		isInit = false;
