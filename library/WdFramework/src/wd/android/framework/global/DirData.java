@@ -2,6 +2,7 @@ package wd.android.framework.global;
 
 import java.io.File;
 import java.util.HashMap;
+import java.util.HashSet;
 
 import wd.android.util.util.EnvironmentInfo;
 import wd.android.util.util.IoUtil;
@@ -12,13 +13,15 @@ import android.content.Context;
 /**
  * 目录管理基类
  */
-public abstract class BaseDirData {
+public class DirData {
 	public static final String WORK_PATH = "workpath";
 	private File workDir = null;
 
-	private HashMap<String, File> mDirs = ObjectUtil.newHashMap();
+	private static final HashSet<String> dirsStr = ObjectUtil.newHashSet();
 
-	public BaseDirData(Context context) {
+	private final HashMap<String, File> mDirs = ObjectUtil.newHashMap();
+
+	public DirData(Context context) {
 		initWorkDir(context);
 	}
 
@@ -65,15 +68,8 @@ public abstract class BaseDirData {
 		return mDirs.get(dir);
 	}
 
-	protected void initDirs(Context context) {
-		String[] dirs = getDirStrings();
-		for (String dir : dirs) {
-			// StringBuilder sb = new StringBuilder();
-			// sb.append(dir);
-			// if (!dir.endsWith(File.separator)) {
-			// sb.append(File.separator);
-			// }
-			// mDirs.put(dir, dir);
+	private void initDirs(Context context) {
+		for (String dir : dirsStr) {
 			File file = new File(workDir, dir);
 			file.mkdirs();
 			mDirs.put(dir, file);
@@ -81,9 +77,13 @@ public abstract class BaseDirData {
 	}
 
 	/**
-	 * 获取目录数组
+	 * 设置初始化目录
 	 * 
-	 * @return
+	 * @param dirName
 	 */
-	public abstract String[] getDirStrings();
+	public static void initDirName(String... dirName) {
+		for (String string : dirName) {
+			dirsStr.add(string);
+		}
+	}
 }

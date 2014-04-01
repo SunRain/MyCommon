@@ -31,6 +31,7 @@ public abstract class AppConfig {
 		setLog();
 		setCrashReportFlag();
 		initDatabase();
+		initDirName();
 	}
 
 	private void setLog() {
@@ -46,6 +47,11 @@ public abstract class AppConfig {
 	 * 初始化数据库表
 	 */
 	protected abstract void initDatabase();
+
+	/**
+	 * 初始化目录
+	 */
+	protected abstract void initDirName();
 
 	/**
 	 * 设置是否需要记录CrashReport

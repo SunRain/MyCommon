@@ -1,7 +1,7 @@
 package me.android.custom;
 
 import me.android.common.db.MyDaoManager;
-import me.android.custom.global.DirData;
+import wd.android.framework.global.DirData;
 import wd.android.framework.manager.CommonBaseManager;
 import wd.android.framework.manager.ServiceHolder;
 import wd.android.util.sdk.ExternalStorageReceiver;

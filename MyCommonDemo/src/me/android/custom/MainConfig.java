@@ -1,13 +1,21 @@
 package me.android.custom;
 
 import wd.android.framework.AppConfig;
+import wd.android.framework.global.DirData;
 import wd.android.util.util.MyLog.MyLogManager.Level;
 import wd.android.util.util.MyLog.MyLogManager.LogMode;
 
 public class MainConfig extends AppConfig {
+	public static final String UPDATE_APK = "update_apk/";
+
 	@Override
 	protected void initDatabase() {
 		// DatabaseConfig.initDatabase(version, beanClazzs);
+	}
+
+	@Override
+	protected void initDirName() {
+		DirData.initDirName(UPDATE_APK);
 	}
 
 	@Override
