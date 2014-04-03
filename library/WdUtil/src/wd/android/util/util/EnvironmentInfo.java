@@ -162,7 +162,10 @@ public class EnvironmentInfo {
 	@TargetApi(8)
 	public static File getExternalFilesDir(Context context, String uniqueName) {
 		if (SdkUtil.hasFroyo()) {
-			return context.getExternalFilesDir(uniqueName);
+			File file = context.getExternalFilesDir(uniqueName);
+			if (file != null) {
+				return file;
+			}
 		}
 
 		// Before Froyo we need to construct the external cache dir ourselves
