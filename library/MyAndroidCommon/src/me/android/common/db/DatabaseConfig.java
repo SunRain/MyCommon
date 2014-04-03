@@ -36,4 +36,10 @@ public class DatabaseConfig {
 		initVersion(version);
 		TABLE_LIST.addAll(beanClazzs);
 	}
+
+	public static void initDatabase(int version,
+			Class<? extends BaseBean> beanClazzs) {
+		initVersion(version);
+		TABLE_LIST.add(beanClazzs);
+	}
 }
