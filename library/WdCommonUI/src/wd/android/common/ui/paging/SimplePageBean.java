@@ -1,4 +1,4 @@
-package me.android.common.ui.paging;
+package wd.android.common.ui.paging;
 
 /**
  * 简单分页对象
