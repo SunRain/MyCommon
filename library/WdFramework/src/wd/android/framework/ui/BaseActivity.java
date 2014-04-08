@@ -65,7 +65,7 @@ public abstract class BaseActivity extends FragmentActivity implements
 
 	@Override
 	protected void onSaveInstanceState(Bundle outState) {
-		// super.onSaveInstanceState(outState);
+		super.onSaveInstanceState(outState);
 		MyLog.i("outState = " + outState);
 	}
 

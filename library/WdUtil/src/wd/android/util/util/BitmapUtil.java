@@ -247,7 +247,6 @@ public class BitmapUtil {
 		outStream.close();
 		inStream.close();
 		return data;
-
 	}
 
 	/**
