@@ -16,7 +16,6 @@ import wd.android.util.util.EnvironmentInfo;
 import wd.android.util.util.MyLog;
 import wd.android.util.util.Utils;
 import android.content.Context;
-import android.util.Base64;
 
 /**
  * 带有缓存的数据请求接口
@@ -59,26 +58,29 @@ public class HttpLoader {
 
 			if (entry != null) {
 				try {
-					byte[] responseBytes = Base64.decode(entry.getContent(), 0);
-					Header[] headers = Utils.genHeader(entry.getHeaders());
-					Map<String, Object> responseMap = httpHandler
-							.parseResponse(headers, responseBytes);
-					if (null != responseMap) {
-						httpHandler.onSuccess(200, entry.getHeaders(),
-								responseMap);
-						// log
-						if (MyLog.isDebug()) {
-							MyLog.d("header:----------------------------------------");
-							Set<Entry<String, String>> entrySet = entry
-									.getHeaders().entrySet();
-							for (Entry<String, String> mapEntry : entrySet) {
-								MyLog.d(mapEntry.getKey() + ":"
-										+ mapEntry.getValue());
+					String content = entry.getContent();
+					if (!Utils.isEmpty(content)) {
+						byte[] responseBytes = content.getBytes();
+						Header[] headers = Utils.genHeader(entry.getHeaders());
+						Map<String, Object> responseMap = httpHandler
+								.parseResponse(headers, responseBytes);
+						if (null != responseMap) {
+							httpHandler.onSuccess(200, entry.getHeaders(),
+									responseMap);
+							// log
+							if (MyLog.isDebug()) {
+								MyLog.d("header:----------------------------------------");
+								Set<Entry<String, String>> entrySet = entry
+										.getHeaders().entrySet();
+								for (Entry<String, String> mapEntry : entrySet) {
+									MyLog.d(mapEntry.getKey() + ":"
+											+ mapEntry.getValue());
+								}
+								MyLog.d("responseBody:----------------------------------------");
+								MyLog.d(String.valueOf(responseMap));
 							}
-							MyLog.d("responseBody:----------------------------------------");
-							MyLog.d(String.valueOf(responseMap));
+							return;
 						}
-						return;
 					}
 				} catch (Throwable e) {
 					MyLog.e(e);
