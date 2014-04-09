@@ -1,5 +1,8 @@
 package me.android.common.image;
 
+import java.io.File;
+
+import wd.android.util.util.Utils;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.widget.ImageView;
@@ -16,17 +19,12 @@ import com.nostra13.universalimageloader.utils.DiscCacheUtils;
 import com.nostra13.universalimageloader.utils.MemoryCacheUtils;
 import com.nostra13.universalimageloader.utils.StorageUtils;
 
-import java.io.File;
-
-import wd.android.util.util.Utils;
-
 public class ImageManager {
 	private DisplayImageOptions options;
 	private ImageLoader imageLoader;
 
 	private int maxImageWidthForMemoryCache = 0;
 	private int maxImageHeightForMemoryCache = 0;
-	private ImageLoaderConfiguration defaultConfig;
 
 	public void init(Context context, String cacheDirPath, int defRedIs) {
 		options = getOptions(defRedIs);
@@ -36,7 +34,8 @@ public class ImageManager {
 		// or you can create default configuration by
 		// ImageLoaderConfiguration.createDefault(this);
 		// method.
-		defaultConfig = getConfiguration(context, cacheDirPath);
+		ImageLoaderConfiguration defaultConfig = getConfiguration(context,
+				cacheDirPath);
 
 		// Initialize ImageLoader with configuration
 		imageLoader = ImageLoader.getInstance();
@@ -45,6 +44,7 @@ public class ImageManager {
 
 	public void deInit() {
 		imageLoader.destroy();
+		options = null;
 	}
 
 	private ImageLoaderConfiguration getConfiguration(Context context,
@@ -151,8 +151,8 @@ public class ImageManager {
 		loadImage(uri, imageView, options);
 	}
 
-	public void loadImage(String uri, ImageView imageView, int defRedIs) {
-		imageLoader.displayImage(uri, imageView, getOptions(defRedIs));
+	public void loadImage(String uri, ImageView imageView, int defResId) {
+		imageLoader.displayImage(uri, imageView, getOptions(defResId));
 	}
 
 	public void loadImage(String uri, ImageView imageView,

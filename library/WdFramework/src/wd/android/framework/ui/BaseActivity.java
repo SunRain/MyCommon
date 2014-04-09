@@ -7,6 +7,7 @@ import wd.android.util.util.MyLog;
 import wd.android.util.util.ObjectUtil;
 import wd.android.util.util.UIUtils;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentActivity;
@@ -61,6 +62,12 @@ public abstract class BaseActivity extends FragmentActivity implements
 		onDestroyActivity();
 		mFragmentHelper = null;
 		super.onDestroy();
+	}
+
+	@Override
+	public void onConfigurationChanged(Configuration newConfig) {
+		super.onConfigurationChanged(newConfig);
+		MyLog.i("newConfig");
 	}
 
 	@Override
@@ -135,7 +142,6 @@ public abstract class BaseActivity extends FragmentActivity implements
 
 	@Override
 	public void onBackPressed() {
-		// finish();
 		super.onBackPressed();
 	}
 
