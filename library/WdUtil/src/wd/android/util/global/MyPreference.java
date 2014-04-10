@@ -2,9 +2,8 @@ package wd.android.util.global;
 
 import java.util.Set;
 
-import wd.android.util.util.EnvironmentInfo;
-import wd.android.util.util.ObjectUtil;
 import wd.android.util.util.EnvironmentInfo.SdkUtil;
+import wd.android.util.util.ObjectUtil;
 import android.annotation.TargetApi;
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -14,18 +13,13 @@ import android.os.Build;
  * Preference包装类，可将数据存储于SharedPreferences中
  */
 public class MyPreference {
-	private String packName = "";
-	private Context mContext;
 	private SharedPreferences settings;
 	private SharedPreferences.Editor editor;
 	/** 是否是事务模式，在事务模式下，提交的修改都不会写入文件 */
 	private volatile boolean isTransactionMode = false;
 
-	public MyPreference(Context context) {
-		mContext = context;
-		packName = context.getPackageName();
-		settings = mContext.getSharedPreferences(packName, 0);
-		editor = settings.edit();
+	public MyPreference(Context context, String name) {
+		settings = context.getSharedPreferences(name, 0);
 	}
 
 	/**
@@ -44,15 +38,42 @@ public class MyPreference {
 		synchronized (this) {
 			isTransactionMode = false;
 		}
-		editor.commit();
+		commitSettings();
 	}
 
 	private void commit() {
+		if (isTransactionMode) {
+			return;
+		}
+
 		synchronized (this) {
 			if (!isTransactionMode) {
-				editor.commit();
+				commitSettings();
 			}
 		}
+	}
+
+	private void commitSettings() {
+		synchronized (this) {
+			if (editor != null) {
+				editor.commit();
+				editor = null;
+			}
+		}
+	}
+
+	private void editSettings() {
+		if (editor == null) {
+			synchronized (this) {
+				if (editor == null) {
+					editor = settings.edit();
+				}
+			}
+		}
+	}
+
+	private void edit() {
+		editSettings();
 	}
 
 	/**
@@ -132,6 +153,7 @@ public class MyPreference {
 	 * @param value
 	 */
 	public void write(String key, String value) {
+		edit();
 		editor.putString(key, value);
 		commit();
 	}
@@ -143,6 +165,7 @@ public class MyPreference {
 	 * @param value
 	 */
 	public void write(String key, boolean value) {
+		edit();
 		editor.putBoolean(key, value);
 		commit();
 	}
@@ -154,6 +177,7 @@ public class MyPreference {
 	 * @param value
 	 */
 	public void write(String key, float value) {
+		edit();
 		editor.putFloat(key, value);
 		commit();
 	}
@@ -165,6 +189,7 @@ public class MyPreference {
 	 * @param value
 	 */
 	public void write(String key, int value) {
+		edit();
 		editor.putInt(key, value);
 		commit();
 	}
@@ -176,6 +201,7 @@ public class MyPreference {
 	 * @param value
 	 */
 	public void write(String key, long value) {
+		edit();
 		editor.putLong(key, value);
 		commit();
 	}
@@ -192,6 +218,7 @@ public class MyPreference {
 			commit();
 			return;
 		}
+		edit();
 		editor.putStringSet(key, value);
 		commit();
 	}

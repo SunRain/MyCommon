@@ -9,7 +9,7 @@ public class CommonBaseManager extends BaseManager {
 	@Override
 	protected void onCreate(Context context) {
 		addService(new GlobalData());
-		addService(new MyPreference(context));
+		addService(new MyPreference(context, context.getPackageName()));
 	}
 
 	@Override
