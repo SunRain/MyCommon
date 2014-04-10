@@ -6,12 +6,11 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
+import org.apache.http.Header;
+
 import me.android.common.cache.core.LocalCache;
 import me.android.common.cache.disk.entry.HttpCacheEntry;
 import me.android.common.cache.disk.local.HttpCacheLoder;
-
-import org.apache.http.Header;
-
 import wd.android.util.util.EnvironmentInfo;
 import wd.android.util.util.MyLog;
 import wd.android.util.util.Utils;

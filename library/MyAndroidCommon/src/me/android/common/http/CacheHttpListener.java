@@ -2,12 +2,10 @@ package me.android.common.http;
 
 import java.util.Map;
 
-import me.android.common.cache.disk.entry.HttpCacheEntry;
-
 import org.apache.http.Header;
 
+import me.android.common.cache.disk.entry.HttpCacheEntry;
 import wd.android.util.util.Utils;
-import android.util.Base64;
 
 public abstract class CacheHttpListener extends MyJsonHttpListener {
 
@@ -37,9 +35,7 @@ public abstract class CacheHttpListener extends MyJsonHttpListener {
 		private void saveCache(Map<String, String> headers, byte[] responseBytes) {
 			if (entry != null) {
 				entry.setHeaders(headers);
-				String content = String
-						.valueOf(Base64.encode(responseBytes, 0));
-				// String content = JSON.toJSONString(responseMap);
+				String content = new String(responseBytes);
 				entry.setContent(content);
 				HttpLoader.saveCache(entry.getUri(), entry);
 			}

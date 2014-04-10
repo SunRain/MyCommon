@@ -492,4 +492,16 @@ public class Utils {
 		}
 		return headMap;
 	}
+
+	public static String replaceBlank(String str) {
+		String dest = "";
+		if (!Utils.isEmpty(str)) {
+			Pattern p = Pattern.compile("\\s*|\t|\r|\n");
+			Matcher m = p.matcher(str);
+			dest = m.replaceAll("");
+		}
+		return dest;
+
+	}
+
 }
